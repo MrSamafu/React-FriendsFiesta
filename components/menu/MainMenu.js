@@ -3,11 +3,9 @@ import { StyleSheet, Text, View, TextInput, ScrollView, TouchableHighlight, Touc
 import { FontAwesome } from "@expo/vector-icons";
 
 export default function MainMenu(props){
-    const [page, setPage] = useState('Actus');
 
 function navigate(str){
-    setPage(str);
-    props.navigate(page);
+    props.navigate(str);
 }
 
     return(
@@ -15,7 +13,7 @@ function navigate(str){
             <TouchableOpacity activeOpacity={0.5} underlayColor="#FEFEFE" onPress={()=>navigate('Actus')}>
                 <Text style={{fontSize:30, marginHorizontal: 10 , color: 'white'}}>Actus</Text>
             </TouchableOpacity>
-            <TouchableOpacity activeOpacity={0.5} underlayColor="#FEFEFE" onPress={()=>navigate('Calendrier')}>
+            <TouchableOpacity activeOpacity={0.5} underlayColor="#FEFEFE" onPress={()=>navigate('Calendar')}>
                 <Text style={{fontSize:30, marginHorizontal: 10 , color: 'white'}}>Calendrier</Text>
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={0.5} underlayColor="#FEFEFE" onPress={()=>navigate('Communauté')}>
@@ -24,7 +22,7 @@ function navigate(str){
             <TouchableOpacity activeOpacity={0.5} underlayColor="#FEFEFE" onPress={()=>navigate('Chat')}>
                 <Text style={{fontSize:30, marginHorizontal: 10 , color: 'white'}}>Chat</Text>
             </TouchableOpacity>
-            <TouchableOpacity activeOpacity={0.5} underlayColor="#FEFEFE" onPress={()=>navigate('Profil')}>
+            <TouchableOpacity activeOpacity={0.5} underlayColor="#FEFEFE" onPress={()=>navigate('MyProfil')}>
                 <Text style={{fontSize:30, marginHorizontal: 10 , color: 'white'}}>Profil</Text>
             </TouchableOpacity>
         </View>
