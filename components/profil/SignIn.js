@@ -13,7 +13,12 @@ export default function SignIn(props){
 
 
     function sendDataToConnect(){
-        props.signIn(email,password,name,firstName,pseudo)
+        if(password !== password2){
+            alert("Confimation du mot de passe différent");
+        }
+        else{
+            props.signIn(email,password,name,firstName,pseudo);
+        }
     }
     return(
         <View style={{flex: 1,width: '75%'}}>

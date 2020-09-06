@@ -4,7 +4,7 @@ import { Card, Avatar } from 'react-native-elements';
 import { FontAwesome } from "@expo/vector-icons";
 
 
-export default function MyProfil() {
+export default function MyProfil(props) {
 
     return (
         <View style={{ flex: 1, alignItems: 'center', marginVertical: 5 }}>
@@ -21,10 +21,10 @@ export default function MyProfil() {
 
                 </View>
                 <View>
-                    <Text style={styles.profilText}>Nom</Text>
-                    <Text style={styles.profilText}>Prenom</Text>
-                    <Text style={styles.profilText}>Pseudo</Text>
-                    <Text style={styles.profilText}>Email</Text>
+                    <Text style={styles.profilText}>{props.name}</Text>
+                    <Text style={styles.profilText}>{props.firstName}</Text>
+                    <Text style={styles.profilText}>{props.pseudo}</Text>
+                    <Text style={styles.profilText}>{props.email}</Text>
                     <Text style={styles.profilText}>PhoneNumber</Text>
                 </View>
             </View>

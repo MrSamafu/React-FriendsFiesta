@@ -14,14 +14,22 @@ import Connect from './components/profil/Connect';
 export default function App() {
   const [page,setPage] = useState('Connect');
   const [email, setEmail] = useState('');
-  const [password,setPassword] = useState('')
-
+  const [name,setName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [pseudo,setPseudo] = useState('');
 
   function profil(_email,_password){
     setEmail(email),
     setPassword(password)
   }
-  function navigate(str){
+  function navigate(str,data){
+    if(data !== null){
+      setEmail(data.user.email);
+      setFirstName(data.user.firstName);
+      setName(data.user.name);
+      setPseudo(data.user.pseudo);
+    
+    }
     setPage(str)
   }
   return (
@@ -31,7 +39,7 @@ export default function App() {
         {page === 'Actus' && <ViewActu/>}
         {page === 'Communauté' && <ViewCommunaute/>}
         {page === 'Calendar' && <AgendaCalendar/>}
-        {page === 'MyProfil' && <MyProfil/>}
+        {page === 'MyProfil' && <MyProfil email={email} name={name} firstName={firstName} pseudo={pseudo}/>}
     </View>
   );
 }
